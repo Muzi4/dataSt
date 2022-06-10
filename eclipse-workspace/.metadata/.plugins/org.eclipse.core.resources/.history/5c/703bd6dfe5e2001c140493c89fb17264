@@ -1,0 +1,99 @@
+package week13;
+
+class StackNode {
+	int data;
+	StackNode link;
+}
+
+class LinkedStack {
+	StackNode top;
+	
+	public boolean isEmpty() {
+		return(top == null);
+	}
+	
+	public void push(int item) {
+		StackNode newNode = new StackNode();
+		newNode.data = item;
+		newNode.link = top;
+		top = newNode;
+	}
+	
+	public int pop() {
+		if(isEmpty()) {
+			System.out.println("Deleting fail!! Linked Stack is empty");
+			return 0;
+		} 
+		else {
+			int item = top.data;
+			top = top.link;
+			return item;
+		}
+	}
+}
+class QNode {
+	int data;
+	QNode link;
+}
+
+class LinkedQueue {
+	QNode front;
+	QNode rear;
+	
+	public LinkedQueue() {
+		front = null;
+		rear = null;
+	}
+	
+	public boolean isEmpty() {
+		return(front == rear);
+	}
+	
+	public void enQueue(int item) {
+		QNode newNode = new QNode();
+		newNode.data = item;
+		newNode.link = null;
+		if(isEmpty()) {
+			front = newNode;
+			rear = newNode;
+		}
+		else {
+			rear.link = newNode;
+			rear = newNode;
+		}
+	}
+	
+	public int deQueue() {
+		if(isEmpty()) {
+			System.out.println("Deleting fail!!! Linked Queue is empty");
+			return 0;
+		}
+		else {
+			int item = front.data;
+			front = front.link;
+			if(front==null)
+				rear = null;
+			return item;
+		}
+	}
+}
+
+class GraphNode {
+	int vertex;
+	GraphNode link;
+}
+
+class AdjList {
+	GraphNode head[] = new GraphNode[10];
+	private int totalV = 0;
+	
+	public void inserVertex(int v) {
+		totalV++;
+	}
+}
+
+public class GraphSearch {
+	public static void main(String[] args) {
+		
+	}
+}
